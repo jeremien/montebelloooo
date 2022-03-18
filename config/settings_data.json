@@ -48,7 +48,7 @@
             "footer-2"
           ],
           "settings": {
-            "show_social": true,
+            "show_social": false,
             "enable_country_selector": false,
             "enable_language_selector": false,
             "margin_top": 48

@@ -1,0 +1,7 @@
+<table>
+{% tablerow product in collections.all.products %}
+
+    {{ product.price | money_without_trailing_zeros }}
+
+{% endtablerow %}
+</table>
