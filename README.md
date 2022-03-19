@@ -25,3 +25,6 @@ https://github.com/Shopify/dawn
 {% for product in collections.all.products %}
  {{ product.price | money_without_trailing_zeros }} 
 {% endfor %}
+
+# api
+https://shopify.dev/api/liquid/objects/product
