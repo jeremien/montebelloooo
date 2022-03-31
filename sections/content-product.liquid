@@ -9,10 +9,8 @@
     <p>{{ product.title }}</p>
     <p>{{ product.description }}<p>
     
-    {% form 'product' %}
-        <!-- form content -->
+    {% form 'product', product %}
         <input type="submit" value="Add to cart">
-        {{ form | payment_button }}
     {% endform %}
 
     <ul>
