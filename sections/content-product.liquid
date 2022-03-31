@@ -1,1 +1,18 @@
-{{ product | json }}
+<div class="product">
+    <p>{{ product.vendor }}</p>
+    <ul>
+    {% for tag in product.tags %} 
+        <li>{{ tag }}</li>
+    {% endfor %}
+    </ul>
+    <p>{{ product.price | money_without_trailing_zeros }}</p>
+    <p>{{ product.title }}</p>
+    <p>{{ product.description }}<p>
+    
+    <ul>
+    {% for image in product.images %}
+        <li>{{ image | image_url: width: 300 }}</li>
+    {% endfor %}
+    </ul>
+
+</div>
