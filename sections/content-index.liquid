@@ -1,7 +1,7 @@
 {% for product in collections.all.products %}
 <div class="all_products">
     {%- assign featured_image = product.featured_image %}
-
+    <figure>
     <a href="{{ product.url }}">
         <img 
             src="{{ featured_image | image_url }}" 
@@ -11,9 +11,11 @@
             height="{{ image.height }}"
         >
     </a>
-    {{ product.title }}
-    {{ product.price | money_without_trailing_zeros }} 
-
+    <figcaption>
+        <p>{{ product.title }}</p>
+        <p>{{ product.price | money_without_trailing_zeros }}</p>
+    <figcaption>
+</figure>
 </div>
 {% endfor %}
 
