@@ -2,7 +2,9 @@
   "layout": "custom",
   "sections": {
     "main": {
-      "type": "content-collection"
+      "type": "content-collection",
+      "settings": {
+      }
     }
   },
   "order": [

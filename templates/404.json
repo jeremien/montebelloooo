@@ -1,11 +1,13 @@
 {
-    "layout": "custom",
-    "sections": {
-      "main": {
-        "type": "404"
+  "layout": "custom",
+  "sections": {
+    "main": {
+      "type": "404",
+      "settings": {
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

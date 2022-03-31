@@ -1,13 +1,13 @@
 {
-    "layout": "custom",
-    "sections": {
-        "main": {
-            "type": "content-blog",
-                "settings": {
-            }
-        }
-    },
-    "order": [
-      "main"
-    ]
-  }
+  "layout": "custom",
+  "sections": {
+    "main": {
+      "type": "content-blog",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,13 +1,13 @@
 {
-    "layout": "custom",
-    "sections": {
-      "main": {
-        "type": "content-page",
-        "settings": {
-        }
+  "layout": "custom",
+  "sections": {
+    "main": {
+      "type": "content-page",
+      "settings": {
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

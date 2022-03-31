@@ -1,13 +1,12 @@
 {
-    "sections": {
-      "main": {
-        "type": "content-search",
-        "settings": {
-        }
+  "sections": {
+    "main": {
+      "type": "content-search",
+      "settings": {
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
-  
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
