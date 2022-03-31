@@ -32,3 +32,5 @@ https://shopify.dev/api/liquid/objects/product
 #
 shaole
 
+# sass
+sass --watch assets/scss/style.scss assets/css/style.css
