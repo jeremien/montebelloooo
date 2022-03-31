@@ -1,7 +1,8 @@
 {
+    "layout": "custom",
     "sections": {
       "main": {
-        "type": "main-404"
+        "type": "404"
       }
     },
     "order": [
