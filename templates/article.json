@@ -1,0 +1,14 @@
+{
+    "layout": "custom",
+    "sections": {
+      "main": {
+        "type": "content-blog-article",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
+  

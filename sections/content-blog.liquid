@@ -1,1 +1,6 @@
-<p>actus</p>
+{% for article in blog.articles %}
+    <ul>
+        <li><a href="{{ article.handle }}">{{ article.title }}</a></li>
+    </ul>
+
+{% endfor %}

@@ -29,8 +29,8 @@ https://github.com/Shopify/dawn
 # api
 https://shopify.dev/api/liquid/objects/product
 
-#
+# mdp
 shaole
 
-# sass
-sass --watch assets/scss/style.scss assets/css/style.css
+# filtre
+http://127.0.0.1:9292/collections/frontpage/peinture

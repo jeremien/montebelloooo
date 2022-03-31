@@ -1,1 +1,22 @@
-<p>collection</p>
+{% for collection in collections %}
+
+    <h1>{{ collection.title }}</h1>
+
+    <ul>
+        {% for product in collection.products %}
+            <li>
+                <a class="product-card" href="{{ product.url | within: collection }}">
+                  <img src="{{ product.featured_image.src | img_url: '1024x' }}" alt="" loading="lazy">
+                  {{ product.title }}
+                  <p>
+                      {{ product.price | money_without_trailing_zeros }}
+                  </p>
+                  <p>
+                    {{ product.vendor }}
+                  </p>
+                </a>
+              </li>
+        {% endfor %}
+    </ul>
+
+{% endfor %}
