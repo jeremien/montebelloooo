@@ -1,9 +1,10 @@
 {
-  "name": "product",
   "layout": "custom",
-  "sections": {   
+  "sections": {
     "main": {
-      "type": "content-product"
+      "type": "content-product",
+      "settings": {
+      }
     }
   },
   "order": [
