@@ -2,7 +2,7 @@
     "layout": "custom",
     "sections": {
       "main": {
-        "type": "list-collections",
+        "type": "content-list-collections",
         "settings": {
         }
       }
