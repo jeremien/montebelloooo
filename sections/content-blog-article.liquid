@@ -1,1 +1,8 @@
-{{ article | json }}
+<p>{{ article.title }}</p>
+<p>{{ article.content }}</p>
+<p><img src="{{ article.image | image_url }}" 
+        loading="lazy"
+        width="{{ image.width }}"
+        height="{{ image.height }}" 
+    />
+</p>

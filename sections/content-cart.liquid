@@ -1,1 +1,12 @@
-<p>cart</p>
+<h1>objets</h1>
+<ul>
+{% for item in cart.items %}
+    <li>
+        <p><a href="{{ item.url }}">{{ item.title }}</a></p> 
+        <p>quantité{{ item.quantity }}</p> 
+    </li>
+{% endfor %}
+</ul>
+
+<p>Total : {{ cart.total_price | money }}</p>
+<p><a href="/cart/clear">Vider le panier</a></p>
