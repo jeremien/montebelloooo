@@ -1,6 +1,7 @@
 <div role="header">
 
-    <p>Espace Montebello</p>
+    <p><a href="/">Espace Montebello</a></p>
+    <p>Panier: {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})<p>
     
 </div>
 
