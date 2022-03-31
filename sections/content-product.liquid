@@ -11,7 +11,12 @@
     
     <ul>
     {% for image in product.images %}
-        <li>{{ image | image_url: width: 300 }}</li>
+        <li><img 
+                src="{{ image | image_url: width: 300 }}" 
+                loading="lazy"
+                width="{{ image.width }}"
+                 height="{{ image.height }}"
+            /></li>
     {% endfor %}
     </ul>
 
