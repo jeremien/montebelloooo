@@ -23,13 +23,19 @@
 
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
 
-    {{content_for_header}}
+    {{ content_for_header }}
 
 </head>
 <body>
-    <div class="container">
+
     {% section 'header_custom' %}
+
+    <div class="container">
+
+    {% section 'nav_custom' %}
+    
     {{ content_for_layout }}
-    </div>
+    
+</div>
 </body>
-</html>
+</html> 
