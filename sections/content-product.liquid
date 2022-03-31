@@ -1,25 +1,26 @@
 <div class="product">
-    <p>{{ product.vendor }}</p>
-    <ul>
-    {% for tag in product.tags %} 
-        <li>{{ tag }}</li>
-    {% endfor %}
-    </ul>
-    <p>{{ product.price | money_without_trailing_zeros }}</p>
-    <p>{{ product.title }}</p>
-    <p>{{ product.description }}<p>
-    
-    {% form 'product', product %}
-        <input type="submit" value="Add to cart">
-    {% endform %}
+    <div class="product--info">
+        <p>{{ product.vendor }}</p>
+        <ul>
+            {% for tag in product.tags %} 
+            <li>{{ tag }}</li>
+        {% endfor %}
+        </ul>
+        <p>{{ product.price | money_without_trailing_zeros }}</p>
+        <p>{{ product.title }}</p>
+        <p>{{ product.description }}<p>
 
-    <ul>
+        <form style="margin-bottom:20px" class="product-form" action="/cart/add" data-productid="{{product.id}}"  method="post"> 
+            <input type="hidden" name="id" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
+            <input type="submit" value="Ajouter au panier" />
+        </form>
+    </div>            
+
+    <ul class="product--images">
     {% for image in product.images %}
         <li><img 
                 src="{{ image | image_url }}" 
                 loading="lazy"
-                width="{{ image.width }}"
-                 height="{{ image.height }}"
             /></li>
     {% endfor %}
     </ul>

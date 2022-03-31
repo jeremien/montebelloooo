@@ -1,7 +1,12 @@
-<div role="header">
+<div class="header" role="header">
 
-    <p><a href="/">Espace Montebello</a></p>
-    <p>Panier: {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})<p>
+    <div class="header--item">
+        <a href="/">Espace Montebello</a></p>
+    </div>
+
+    <div class="header--item">
+        <a href="/cart">Panier: {{ cart.item_count }} {{ cart.item_count | pluralize: 'objet', 'objets' }} ({{ cart.total_price | money }})</a>
+    </div>
     
 </div>
 
@@ -12,7 +17,6 @@
 {
     "name": "header",
     "class": "header"
-
 }
 
 {% endschema %}
