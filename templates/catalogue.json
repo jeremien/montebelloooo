@@ -1,0 +1,13 @@
+{
+    "layout": "custom",
+    "sections": {
+      "main": {
+        "type": "content-catalogue",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
