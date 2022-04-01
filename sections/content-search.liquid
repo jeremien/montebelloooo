@@ -1,1 +1,27 @@
-<p>search</p>
+
+<select id="sort-by">
+
+  {% assign sort_by = search.sort_by | default: search.default_sort_by %}
+
+  {% for option in search.sort_options %}
+
+    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+
+      {{ option.name }}
+
+    </option>
+
+  {% endfor %}
+
+</select>
+
+
+
+{{ search.performed }}
+
+{% if search.performed %}
+    <!-- Show search results -->
+    {% for item in search.results %}
+        <h3>{{ item.title | link_to: item.url }}</h3>
+    {% endfor %}
+{% endif %}

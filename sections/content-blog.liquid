@@ -1,6 +1,8 @@
-{% for article in blog.articles %}
-    <ul>
-        <li><a href="{{ article.handle }}">{{ article.title }}</a></li>
-    </ul>
+<div class="blog">
+    {% for article in blog.articles %}
+        <ul>
+            <li>Le {{ article.updated_at }}, <a href="{{ article.handle }}">{{ article.title }}</a></li>
+        </ul>
+    {% endfor %}
 
-{% endfor %}
+</div>

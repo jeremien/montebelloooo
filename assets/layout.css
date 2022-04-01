@@ -1,7 +1,23 @@
+@font-face {
+    font-family: "method";
+    src: local("method"), url(MethodMono-Regular.woff) format("woff");}
+
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: line-through;
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    /* margin: 20px; */
+    font-family: 'method', Courier, monospace;
 }
 
 .container--content {
@@ -14,14 +30,26 @@
     height: 50px;
     width: 100%;
     justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .header--item {
-    width: 200px;   
+    width: 430px;   
 }
 
 .navigation {
     width: 200px;
+    position: fixed;
+    margin-top: 70px;
+    padding-left: 20px;
+    /* padding-top: 10px; */
+}
+
+.navigation li {
+    margin-bottom: 5px;
 }
 
 .content {
@@ -30,6 +58,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-left: 200px;
+    padding-top: 70px;
 }
 
 .content--item {
@@ -47,7 +77,9 @@ img {
 }
 
 .page {
-    width: 300px;
+    width: 40%;
+    margin-left: 200px;
+    margin-top: 70px;
 }
 
 h1 {
@@ -57,12 +89,32 @@ h1 {
 .product {
     display: flex;
     width: 100%;
+    margin-left: 200px;
+    margin-top: 70px;
 }
 
 .product--info {
     width: 20%;
     padding-right: 10px;
     padding-left: 20px;
+}
+
+.product--info h1 {
+    text-decoration: underline;
+}
+
+.product--info button {
+    border: 1px solid black;
+    padding: 5px;
+    font-family: 'method', Courier, monospace;
+    cursor: pointer;
+}
+
+.product-form input {
+    border: 1px solid black;
+    padding: 5px;
+    font-family: 'method', Courier, monospace;
+    cursor: pointer;
 }
 
 .product--images {
@@ -75,4 +127,43 @@ p {
 
 ul {
     margin-bottom: 10px;
+}
+
+.panier {
+    margin-left: 200px;
+    margin-top: 70px;
+}
+
+.collections {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 200px;
+    margin-top: 70px;
+}
+
+.collection--item {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.collection--item figure {
+    width: 200px;
+}
+
+.blog {
+    width: 60%;
+    margin-left: 200px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog article {
+    width: 50%;
+}
+
+.blog figure {
+    width: 50%;
 }

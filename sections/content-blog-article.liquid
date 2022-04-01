@@ -1,8 +1,17 @@
-<p>{{ article.title }}</p>
-<p>{{ article.content }}</p>
-<p><img src="{{ article.image | image_url }}" 
-        loading="lazy"
-        width="{{ image.width }}"
-        height="{{ image.height }}" 
-    />
-</p>
+<div class="blog">
+    <article>
+        <h1>{{ article.title }}</h1>
+        <p> par {{ article.author }}
+        <p>{{ article.content }}</p>
+        <p>
+            {{ article.tags }}
+        </p>
+    </article>
+    <figure>
+        <img src="{{ article.image | image_url }}" 
+            loading="lazy"
+            width="{{ image.width }}"
+            height="{{ image.height }}" 
+        />
+    </figure>
+</div>

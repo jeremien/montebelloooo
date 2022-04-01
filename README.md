@@ -33,4 +33,5 @@ https://shopify.dev/api/liquid/objects/product
 shaole
 
 # filtre
-http://127.0.0.1:9292/collections/frontpage/peinture
+
+http://127.0.0.1:9292/search?q=peinture&sort_by=price-ascending
