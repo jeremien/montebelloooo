@@ -1,12 +1,15 @@
-
+body {
+    background-color: white;
+    color: #0400DD;
+}
 
 a {
-    color: black;
+    color: #0400DD;
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: line-through;
+    text-decoration: underline;
 }
 
 
@@ -20,27 +23,37 @@ a:hover {
 .container--content {
     display: flex;
     flex-direction: row;
+    margin-top: 60px;
+
 }
 
 .header {
     display: flex;
-    height: 50px;
+    height: 40px;
     width: 100%;
     justify-content: space-between;
     position: fixed;
-    background-color: white;
-    padding-top: 10px;
+    background-color: #00D14E;
+
+    /* padding-top: 10px; */
     padding-left: 10px;
+    z-index: 100;
 }
 
 .header--item {
-    width: 430px;   
+    width: 430px;
+    padding-top: 10px;
+    /* padding-right: 20px; */
+}
+
+.right {
+    text-align: right;
+    padding-right: 40px;
 }
 
 .navigation {
     width: 200px;
     position: fixed;
-    margin-top: 70px;
     padding-left: 20px;
     /* padding-top: 10px; */
 }
@@ -56,7 +69,7 @@ a:hover {
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-left: 200px;
-    padding-top: 70px;
+    /* margin-top: 90px; */
 }
 
 .content--item {
@@ -76,7 +89,7 @@ img {
 .page {
     width: 40%;
     margin-left: 200px;
-    margin-top: 70px;
+    /* margin-top: 70px; */
 }
 
 h1 {
@@ -87,7 +100,7 @@ h1 {
     display: flex;
     width: 100%;
     margin-left: 200px;
-    margin-top: 70px;
+    /* margin-top: 90px; */
 }
 
 .product--info {
@@ -101,22 +114,71 @@ h1 {
 }
 
 .product--info button {
-    border: 1px solid black;
+    border: 1px solid #0400DD;;
     padding: 5px;
     font-family: 'method', Courier, monospace;
     cursor: pointer;
+    background-color: white;
 }
 
 .product-form input {
-    border: 1px solid black;
+    border: 1px solid #0400DD;;
     padding: 5px;
     font-family: 'method', Courier, monospace;
     cursor: pointer;
+    background-color: white;
+    color: #0400DD;
 }
 
 .product--images {
     width: 50%;
+    /* overflow: hidden; */
+   
 }
+
+.product--images-container {
+    /* height: 300px; */
+    /* background-color: red; */
+}
+
+.product--images-photo {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    margin: auto;
+    /*object-fit: cover;
+    height: 500px;*/
+    /* padding: 1rem 4rem; */
+    /* transition: transform .5s, opacity .5s, z-index .5s; */
+    /* cursor: pointer; */
+}
+
+.product--images-photo.initial,
+.product--images-photo.active {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    /* transition: transform .5s, opacity .5s, z-index .5s; */
+}
+
+.product--images-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product--images-next,
+.product--images-prev {
+    cursor: pointer;
+    z-index: 100;
+}
+
+.product--images-next:hover,
+.product--images-prev:hover {
+    text-decoration: underline;
+}
+
 
 p {
     margin-bottom: 10px;
@@ -128,7 +190,7 @@ ul {
 
 .panier {
     margin-left: 200px;
-    margin-top: 70px;
+    /* margin-top: 70px; */
 }
 
 .collections {
@@ -136,7 +198,7 @@ ul {
     flex-direction: row;
     width: 100%;
     margin-left: 200px;
-    margin-top: 70px;
+    /* margin-top: 70px; */
 }
 
 .collection--item {
@@ -152,7 +214,7 @@ ul {
 .blog {
     width: 60%;
     margin-left: 200px;
-    margin-top: 70px;
+    /* margin-top: 70px; */
     display: flex;
     flex-direction: column;
 }
@@ -163,4 +225,49 @@ ul {
 
 .blog figure {
     width: 50%;
+}
+
+.search {
+    margin-left: 200px;
+
+}
+
+.search--form input {
+    width: 100%;
+    height: 20px;
+    border: 1px solid #0400DD;;
+    padding: 5px;
+    font-family: 'method', Courier, monospace;
+    cursor: pointer;
+    background-color: white;
+    color: #0400DD;
+    margin-bottom: 10px;
+}
+
+.search--form select {
+    border: 1px solid #0400DD;;
+    padding: 5px;
+    font-family: 'method', Courier, monospace;
+    cursor: pointer;
+    background-color: white;
+    color: #0400DD;
+
+}
+
+.search--form button {
+    border: 1px solid #0400DD;;
+    padding: 5px;
+    font-family: 'method', Courier, monospace;
+    cursor: pointer;
+    background-color: white;
+    color: #0400DD;
+}
+
+
+.search--results {
+    margin-top: 20px;
+}
+
+.search--results li {
+    margin-bottom: 10px;
 }

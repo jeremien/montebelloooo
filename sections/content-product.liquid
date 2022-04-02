@@ -13,20 +13,31 @@
         </form>
 
         <p>
-            {% for tag in product.tags %} 
+        
+        {% comment %} {% for tag in product.tags %} 
             <button>{{ tag }}</button>
-        {% endfor %}
+        {% endfor %} {% endcomment %}
     </p>
 
     </div>            
 
-    <ul class="product--images">
-    {% for image in product.images %}
-        <li><img 
+    <div class="product--images" id="product--images">
+        <div class="product--images-container">
+        {% for image in product.images %}
+            <img 
                 src="{{ image | image_url }}" 
                 loading="lazy"
-            /></li>
-    {% endfor %}
-    </ul>
+                class="product--images-photo"
+                {% comment %} width="100" {% endcomment %}
+                {% comment %} height="100" {% endcomment %}
+            />
+        {% endfor %}
+        </div>
+        <div class="product--images-btn">
+            <div id="product--images-next" class="product--images-next">précédent</div>
+            <div id="product--images-prev" class="product--images-prev">suivant</div>
+        </div>
+    </div>
+    
 
 </div>

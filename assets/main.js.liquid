@@ -1,1 +1,116 @@
-console.log('test')
+
+window.onload = initCarousel
+
+
+const itemClass = 'product--images-photo'
+const items = document.getElementsByClassName(itemClass)
+const total = items.length
+const next = document.getElementById('product--images-next')
+const prev = document.getElementById('product--images-prev')
+
+let slide = 0
+let moving = true
+
+function setOneImage() {
+    items[0].classList.add('active')
+    next.style.display = 'none'
+    prev.style.display = 'none'
+    
+}
+
+function setInitialClasses () {
+    items[total - 1].classList.add('prev')
+    items[0].classList.add('active')
+    items[1].classList.add('next')
+}
+
+function setEventListeners () {
+    
+
+
+    next.addEventListener('click', moveNext)
+    prev.addEventListener('click', movePrev)
+}
+
+function moveNext() {
+    if (!moving) {
+        if (slide === (total - 1)) {
+            slide = 0
+        } else {
+            slide++
+        }
+        
+        moveCarrouselTo(slide)
+    }
+}
+
+function movePrev() {
+    if (!moving) {
+        if (slide === 0) {
+            slide = (total - 1)
+        } else {
+            slide--
+        }
+        
+        moveCarrouselTo(slide)
+    }
+}
+
+function disableInteraction () {
+    moving = true
+    setTimeout(function() {
+        moving = false
+    }, 500)
+}
+
+function moveCarrouselTo (slide) {
+    
+    if (!moving) {
+
+        disableInteraction()
+
+        let newPrevious = slide - 1
+        let newNext = slide + 1
+        let oldPrevious = slide - 2
+        let oldNext = slide + 1
+
+        if ((total - 1) > 1) {
+
+            if (newPrevious <= 0) {
+                oldPrevious = (total - 1)
+            } else if (newNext >= (total - 1)){
+                oldNext = 0
+            }
+
+            if (slide === 0) {
+                newPrevious = (total - 1)
+                oldPrevious = (total - 2)
+                oldNext = (slide + 1)
+            } else if (slide === (total - 1)) {
+                newPrevious = (slide - 1)
+                newNext = 0
+                oldNext = 1
+            }
+
+            items[oldPrevious].className = itemClass
+            items[oldNext].className = itemClass
+
+            items[newPrevious].className = itemClass + ' prev'
+            items[slide].className = itemClass + ' active'
+            items[newNext].className = itemClass + ' next'
+        }
+    }
+}
+
+function initCarousel () {
+    console.log(items.length)
+    if (items.length > 1) {
+        setEventListeners()
+        setInitialClasses()
+    } else {
+        setOneImage()
+    }
+
+    moving = false
+    
+}

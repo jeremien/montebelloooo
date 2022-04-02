@@ -4,7 +4,7 @@
     {% for item in cart.items %}
         <li>
             <p><a href="{{ item.url }}">{{ item.title }}</a></p> 
-            <p>quantité{{ item.quantity }}</p> 
+            <p>quantité : {{ item.quantity }} objet(s)</p> 
         </li>
     {% endfor %}
     </ul>

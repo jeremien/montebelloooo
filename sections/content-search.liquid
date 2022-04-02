@@ -1,27 +1,37 @@
+<div class="search">
+  
+  <form action="/search" method="GET" class="search--form">
+  
+    <input type="text" placeholder="votre recherche" name="q">
 
-<select id="sort-by">
+    <select id="sort-by" name="sort_by">
 
-  {% assign sort_by = search.sort_by | default: search.default_sort_by %}
+      {% assign sort_by = search.sort_by | default: search.default_sort_by %}
 
-  {% for option in search.sort_options %}
+      {% for option in search.sort_options %}
 
-    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+        <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
 
-      {{ option.name }}
+          {{ option.name }}
 
-    </option>
+        </option>
 
-  {% endfor %}
+      {% endfor %}
 
-</select>
+    </select>
 
+    <button type="submit" >Chercher</button>
+  </form>
 
+  
+  {% if search.performed %}
+      <ul class="search--results">
+      {% for item in search.results %}
 
-{{ search.performed }}
+          <li>{{ item.title | link_to: item.url }}</li>
+      
+        {% endfor %}
+      </ul>
+  {% endif %}
 
-{% if search.performed %}
-    <!-- Show search results -->
-    {% for item in search.results %}
-        <h3>{{ item.title | link_to: item.url }}</h3>
-    {% endfor %}
-{% endif %}
+</div>

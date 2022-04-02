@@ -1,4 +1,5 @@
 {
+  "layout": "custom",
   "sections": {
     "main": {
       "type": "content-search",
