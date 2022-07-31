@@ -2,7 +2,7 @@
   "layout": "custom",
   "sections": {
     "main": {
-      "type": "content-page",
+      "type": "page_content",
       "settings": {
       }
     }
