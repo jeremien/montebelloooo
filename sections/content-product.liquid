@@ -1,43 +1,56 @@
 <div class="product">
-    <div class="product--info">
+    <div class="product--main">
+        <div class="product--info">
 
-        <h1>{{ product.title }}</h1>
-        <p>{{ product.description }}<p>
-        
+            <h1>{{ product.title }}</h1>
+
             <p>{{ product.vendor }}</p>
-            <p>{{ product.price | money_without_trailing_zeros }}</p>
 
-        <form style="margin-bottom:20px" class="product-form" action="/cart/add" data-productid="{{product.id}}"  method="post"> 
-            <input type="hidden" name="id" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
-            <input type="submit" value="Ajouter au panier" />
-        </form>
+            <p>{{ product.description }}<p>
+            
+            <h2>{{ product.price | money_without_trailing_zeros }}</h2>
 
-        <p>
-        
-        {% comment %} {% for tag in product.tags %} 
-            <button>{{ tag }}</button>
-        {% endfor %} {% endcomment %}
-    </p>
+            <form style="margin-bottom:20px" class="product-form" action="/cart/add" data-productid="{{product.id}}"  method="post"> 
+                <input type="hidden" name="id" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
+                <input type="submit" value="Ajouter au panier" />
+            </form>
 
-    </div>            
+            <p>
+            
+            {% for tag in product.tags %} 
+                <button>{{ tag }}</button>
+            {% endfor %}
+        </p>
 
-    <div class="product--images" id="product--images">
-        <div class="product--images-container">
-        {% for image in product.images %}
-            <img 
-                src="{{ image | image_url }}" 
-                loading="lazy"
-                class="product--images-photo"
-                {% comment %} width="100" {% endcomment %}
-                {% comment %} height="100" {% endcomment %}
-            />
-        {% endfor %}
-        </div>
-        <div class="product--images-btn">
-            <div id="product--images-next" class="product--images-next">précédent</div>
-            <div id="product--images-prev" class="product--images-prev">suivant</div>
+        </div>            
+
+        <div class="product--images" id="product--images">
+            <div class="product--images-container">
+            {% for image in product.images %}
+                <img 
+                    src="{{ image | image_url }}" 
+                    loading="lazy"
+                    class="product--images-photo"
+                    {% comment %} width="100" {% endcomment %}
+                    {% comment %} height="100" {% endcomment %}
+                />
+            {% endfor %}
+            </div>
+            <div class="product--images-btn">
+                <div id="product--images-next" class="product--images-next">précédent</div>
+                <div id="product--images-prev" class="product--images-prev">suivant</div>
+            </div>
+            
         </div>
     </div>
-    
+    {%comment%}
+    <div class="product--variants" id="product--variants">
+        <div class="product--variants-container">
+            {% for variant in product.variants %}
+                {{ variant.title }}
+            {% endfor %}
+        </div>
+    </div>
+    {%endcomment%}
 
 </div>

@@ -33,13 +33,27 @@
    
 
     <div class="container">
+     
     
         {% section 'header_custom' %}
         
-        <div class="container--content">
-        {% section 'nav_custom' %}
-        {{ content_for_layout }}
+        <div class="header--search">
+            <form action="/search" method="GET" class="header-search--form">
+                <input type="text" placeholder="Chercher un artiste ou un objet" name="q">
+            </form>
         </div>
+        
+        
+        <div class="container--content">
+        
+            {% section 'nav_custom' %}
+        
+
+            {{ content_for_layout }}
+
+        </div>
+
+        {% section 'footer_custom' %}
 
     </div>
 
