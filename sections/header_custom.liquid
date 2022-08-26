@@ -1,14 +1,12 @@
-<div class="header" role="header">
 
-    <div class="header--item">
-        <a href="/">Espace Montebello</a></p>
-    </div>
-
-    <div class="header--item right">
-        <a href="/cart">Votre panier contient {{ cart.item_count }} {{ cart.item_count | pluralize: 'objet', 'objets' }} ({{ cart.total_price | money }})</a>
-    </div>
-    
+<div class="header--item">
+    <a href="/">Espace Montebello</a></p>
 </div>
+
+<div class="header--item right">
+    <a href="/cart">Votre panier contient {{ cart.item_count }} {{ cart.item_count | pluralize: 'objet', 'objets' }} ({{ cart.total_price | money }})</a>
+</div>
+    
 
 
 

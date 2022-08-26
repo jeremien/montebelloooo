@@ -12,8 +12,11 @@
         >
     </a>    
     <figcaption>
-        <p>{{ product.title }}</p>
-        <p>{{ product.price | money_without_trailing_zeros }}</p>
+        <h1>{{product.vendor  }}</h1>
+
+        <p><i>{{ product.title }}</i></p>
+        
+        <h2>{{ product.price | money_without_trailing_zeros }}</h2>
     <figcaption>
 </figure>
 </div>

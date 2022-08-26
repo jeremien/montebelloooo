@@ -1,21 +1,36 @@
 <div class="panier">
     <h1>Votre panier</h1>
     <ul>
-    {% for item in cart.items %}
-        <li>
-            <p><a href="{{ item.url }}">{{ item.title }}</a></p> 
-            <p>quantité : {{ item.quantity }} objet(s)</p> 
+
+        {% for item in cart.items %}
+
+        <li class="panier--item">
+            <img 
+                src="{{ item.image | image_url }}"
+                loading="lazy"
+                {% comment %} width="100" {% endcomment %}
+                {% comment %} height="100" {% endcomment %} 
+            />
+            <div>
+                <h1><a href="{{ item.url }}">{{ item.title }}</a></h1>
+                <p>{{ item.vendor }}</p>
+                <p>quantité : {{ item.quantity }} objet(s)</p> 
+            </div>
         </li>
-    {% endfor %}
+        {% endfor %}
+    
     </ul>
 
-    <p>Total : {{ cart.total_price | money }}</p>
+    <div class="panier--total">
+        <p class="panier--final">Total : {{ cart.total_price | money }}</p>
 
+        {% if cart == empty %}
+        <p>Votre panier est vide</p>
+        {% else %}
+        <p><a href="/cart/clear">Vider le panier</a></p>
+        <a href="/checkout/"><button>Terminer la commande</button></a>
+        {% endif %}
 
-    {% if cart == empty %}
-    <p>Votre panier est vide</p>
-    {% else %}
-    <p><a href="/cart/clear">Vider le panier</a></p>
-    <p><a href="/checkout/">Terminer la commande</a></p>
-    {% endif %}
+        <p class="panier--infos">Les frais de livraison et les taxes sont calculés au moment du paiement</p>
+    </div>
 </div>

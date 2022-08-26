@@ -19,6 +19,9 @@ https://github.com/Shopify/dawn
 
   'product.liquid' {% include 'dump' with product %} 
 
+  {% comment %}
+  {% endcomment %}
+
 
 # variables
 
@@ -35,3 +38,18 @@ shaole
 # filtre
 
 http://127.0.0.1:9292/search?q=peinture&sort_by=price-ascending
+
+# cli
+https://shopify.dev/themes/tools/cli/getting-started
+
+shopify login
+shopify theme serve
+shopify theme check
+shopify theme push
+shopify theme publish
+
+<ul>
+  {%- for product_vendor in shop.vendors -%}
+    <li>{{ product_vendor | link_to_vendor }}</li>
+  {%- endfor -%}
+</ul>
