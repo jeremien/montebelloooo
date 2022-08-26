@@ -1,6 +1,8 @@
-    {% for link in linklists['footer'].links -%}
+<div class="footer--items">
+{% for link in linklists['footer'].links -%}
         <span>{{ link.title | link_to: link.url }}</span>
-    {%- endfor %}
+{%- endfor %}
+</div>
 
 {% schema %}
 
