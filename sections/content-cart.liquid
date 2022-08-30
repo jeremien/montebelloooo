@@ -12,7 +12,7 @@
                 {% comment %} height="100" {% endcomment %} 
             />
             <div>
-                <h1><a href="{{ item.url }}">{{ item.title }}</a></h1>
+                <h1>{{ item.title | link_to: item.url }}</h1>
                 <p>{{ item.vendor }}</p>
                 <p>quantité : {{ item.quantity }} objet(s)</p> 
             </div>

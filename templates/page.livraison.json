@@ -1,0 +1,14 @@
+{
+    "layout": "custom",
+    "sections": {
+      "main": {
+        "type": "page_livraison",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
+  

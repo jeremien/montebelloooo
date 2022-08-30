@@ -1,0 +1,11 @@
+<div class="page">
+    <ul>
+        {%- for policy in shop.policies %}
+            <li>
+                <h1>{{ policy.title }}</h1>
+                <p>{{ policy }}</p>
+            </li>
+          {%- endfor %}
+    </ul>
+
+</div>

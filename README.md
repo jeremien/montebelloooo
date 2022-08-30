@@ -53,3 +53,5 @@ shopify theme publish
     <li>{{ product_vendor | link_to_vendor }}</li>
   {%- endfor -%}
 </ul>
+
+https://gist.github.com/jtwray/9916420a950a0db2b025d8a738763484
