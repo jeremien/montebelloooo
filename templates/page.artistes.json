@@ -2,7 +2,7 @@
   "layout": "custom",
   "sections": {
     "main": {
-      "type": "page_content",
+      "type": "page_artists",
       "settings": {
       }
     }
