@@ -1,32 +1,33 @@
-{% for product in collections.all.products %}
-<div class="content--item">
-    {%- assign featured_image = product.featured_image %}
-    <figure>
-    <a href="{{ product.url }}">
-        <img 
-            src="{{ featured_image | image_url }}" 
-            alt="{{ featured_image.alt | escape }}" 
-            loading="lazy"
-            width="{{ image.width }}"
-            height="{{ image.height }}"
-        >
-    </a>    
-    <figcaption>
-        <h1>{{product.vendor  }}</h1>
+<div class="content">
+    
+    <select name="tags">
+        <option value="peinture">peinture</option>
+    </select>
 
-        <p><i>{{ product.title }}</i></p>
-        
-        <h2>{{ product.price | money_without_trailing_zeros }}</h2>
-    <figcaption>
-</figure>
+    <div class="content--index">
+    {% for product in collections.all.products %}
+    <div class="content--item">
+        {%- assign featured_image = product.featured_image %}
+        <figure>
+        <a href="{{ product.url }}">
+            <img 
+                src="{{ featured_image | image_url }}" 
+                alt="{{ featured_image.alt | escape }}" 
+                loading="lazy"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+            >
+        </a>    
+        <figcaption>
+            <h1>{{product.vendor  }}</h1>
+
+            <p><i>{{ product.title }}</i></p>
+            
+            <h2>{{ product.price | money_without_trailing_zeros }}</h2>
+        <figcaption>
+    </figure>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
+</div>
 
-
-{% schema %}
-{
-    "name": "content",
-    "class": "content"
-
-}
-{% endschema %}
