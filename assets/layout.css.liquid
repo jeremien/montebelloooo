@@ -9,7 +9,7 @@ body {
 }
 
 a {
-    color: #var(--main-font-color);
+    color: var(--main-font-color);
     text-decoration: none;
 }
 
@@ -17,6 +17,9 @@ a:hover {
     text-decoration: underline;
 }
 
+a:visited {
+    color: var(--main-font-color);
+}
 
 .container {
     display: flex;
@@ -444,7 +447,8 @@ img {
 
 .search {
     margin-left: 200px;
-
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .search--form input {
@@ -485,6 +489,21 @@ img {
 
 .search--results li {
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search--results img {
+    width: 10%;
+}
+
+.search--results div {
+    margin-left: 10px;
+}
+
+.search--results p {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 /* .shopify-policy__container {

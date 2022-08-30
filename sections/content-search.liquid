@@ -3,11 +3,22 @@
   {% if search.performed %}
       <ul class="search--results">
       {% for item in search.results %}
-
-          <li>{{ item.title | link_to: item.url }}</li>
-      
+        <li>  
+          <img 
+              src="{{ item.featured_image | image_url }}"
+              loading="lazy"
+              {% comment %} width="100" {% endcomment %}
+              {% comment %} height="100" {% endcomment %} 
+          />
+          <div>
+            <p>{{ item.vendor }}</p>
+            <h1>{{ item.title | link_to: item.url }}</h1>
+          </div>
+        </li>
         {% endfor %}
       </ul>
+      {% else %}
+      <p>no results</p>
   {% endif %}
 
 </div>
