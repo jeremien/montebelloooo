@@ -18,7 +18,8 @@
                 data-productid="{{product.id}}"  
                 method="post"
             > 
-                <label for="quantity">Quantité : </label>
+                <label 
+                    for="quantity">Quantité : </label>
                 <input 
                     min="1" 
                     type="number" 
@@ -42,7 +43,7 @@
 
             </form>
 
-            <p>
+            <p class="product-form--tags">
             
             {% for tag in product.tags %} 
                 <button>{{ tag }}</button>
