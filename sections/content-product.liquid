@@ -10,7 +10,7 @@
             
             <h2>{{ product.price | money_without_trailing_zeros }}</h2>
 
-            {% if product.variants[0].inventory_quantity >= 1 %}
+            {% if product.variants[0].inventory_quantity <= 1 %}
 
                 <form 
                     style="margin-bottom:20px" 
