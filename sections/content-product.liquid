@@ -10,38 +10,67 @@
             
             <h2>{{ product.price | money_without_trailing_zeros }}</h2>
 
+            {% if product.variants[0].inventory_quantity >= 1 %}
 
-            <form 
-                style="margin-bottom:20px" 
-                class="product-form" 
-                action="/cart/add" 
-                data-productid="{{product.id}}"  
-                method="post"
-            > 
-                <label 
-                    for="quantity">Quantité : </label>
-                <input 
-                    min="1" 
-                    type="number" 
-                    id="quantity" 
-                    name="quantity" 
-                    value="1" 
-                />    
-                <input 
-                    type="hidden" 
-                    name="id" 
-                    data-productid="{{product.id}}" 
-                    class="product-select" 
-                    value="{{ product.variants[0].id }}" 
-                    data-variant-title="{{ product.variants[0].title }}" 
-                />
-                
-                <input 
-                    type="submit" 
-                    value="Ajouter au panier" 
-                />
+                <form 
+                    style="margin-bottom:20px" 
+                    class="product-form" 
+                    action="/cart/add" 
+                    data-productid="{{ product.id }}"  
+                    method="post"
+                > 
+                    <input 
+                        type="hidden" 
+                        name="id" 
+                        data-productid="{{ product.id }}" 
+                        class="product-select" 
+                        value="{{ product.variants[0].id }}" 
+                        data-variant-title="{{ product.variants[0].title }}" 
+                    />
+                    
+                    <input 
+                        type="submit" 
+                        value="Ajouter au panier" 
+                    />
 
-            </form>
+                </form>
+
+
+            {% else %}
+
+                <form 
+                    style="margin-bottom:20px" 
+                    class="product-form" 
+                    action="/cart/add" 
+                    data-productid="{{ product.id }}"  
+                    method="post"
+                > 
+                    <label 
+                        for="quantity">Quantité : </label>
+                    <input 
+                        min="1" 
+                        type="number" 
+                        id="quantity" 
+                        name="quantity" 
+                        value="1" 
+                    />    
+                    <input 
+                        type="hidden" 
+                        name="id" 
+                        data-productid="{{ product.id }}" 
+                        class="product-select" 
+                        value="{{ product.variants[0].id }}" 
+                        data-variant-title="{{ product.variants[0].title }}" 
+                    />
+                    
+                    <input 
+                        type="submit" 
+                        value="Ajouter au panier" 
+                    />
+
+                </form>
+
+            {% endif %}
 
             <p class="product-form--tags">
             
